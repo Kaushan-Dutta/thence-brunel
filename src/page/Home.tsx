@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { GoDotFill } from "react-icons/go";
@@ -11,11 +10,11 @@ import questions from "../../public/json/question.json"
 
 import { FaRocket } from "react-icons/fa";
 
-const features = [
-  "Enhance fortune 50 company’s insights teams research capabilities",
-  "Enhance fortune 50 company’s insights teams research capabilities",
-  "lorem ipsum dolor sit amet, consectetur adipiscing elit",
-];
+// const features = [
+//   "Enhance fortune 50 company’s insights teams research capabilities",
+//   "Enhance fortune 50 company’s insights teams research capabilities",
+//   "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+// ];
 const Home = () => {
   return (
     <section className="flex flex-col gap-10">
@@ -96,7 +95,7 @@ const Home = () => {
                 </div>
                 <div className="w-1/2 ">
                     {questions.map((obj,idx)=>
-                        <div className="flex flex-col gap-5 my-5">
+                        <div className="flex flex-col gap-5 my-5" key={idx}>
                             <p className="text-lg   flex-row-center justify-between">{obj?.question}<span><button><AiOutlinePlus/></button></span></p>
                             <hr className=" border-shade2"/>
                         </div>
