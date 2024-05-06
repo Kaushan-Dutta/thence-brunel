@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Manrope:wght@200..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-row-center{
+  @apply flex flex-row items-center 
+}
+.redirect{
+  @apply md:px-5 px-3 py-2 md:py-4 rounded-full
+}
