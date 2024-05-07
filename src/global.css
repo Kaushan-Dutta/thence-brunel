@@ -10,3 +10,9 @@
 .redirect{
   @apply md:px-5 px-3 py-2 md:py-4 rounded-full
 }
+input{
+  @apply outline-none bg-shade3 rounded-full font-manrope md:px-5 px-3 py-2 md:py-4 
+}
+input:focus{
+  @apply border-[1px] border-[#537FF1] bg-[#F5F8FF]
+}

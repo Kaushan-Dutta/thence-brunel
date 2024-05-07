@@ -9,7 +9,7 @@ const Navbar:React.FC = () => {
             <img src={Logo} alt="logo" className='md:w-28 w-20' />
         </NavLink>
         <div className='md:text-sm text-xs flex md:gap-5 gap-3'>
-            <NavLink to='/' className='redirect border-[1px] border-shade2 hover:bg-shade4'>Get Projects</NavLink>
+            <NavLink to='/register' className='redirect border-[1px] border-shade2 hover:bg-shade4'>Get Projects</NavLink>
             <NavLink to='/' className='redirect bg-black text-white  hover:bg-shade1'>Onboard Talent</NavLink>
         </div>
     </nav>
