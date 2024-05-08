@@ -19,7 +19,7 @@ const auth = () => {
       onChange: (e) => setEmail(e.target.value),
       remarks: "Enter a valid email address",
       condition: () => {
-        if (email.includes("@")) {
+        if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
           return true;
         }
       },
@@ -35,6 +35,8 @@ const auth = () => {
   const submitForm = (e) => {
     e.preventDefault();
     try {
+      console.log('Email:',email,'Name:',name)
+      setSubmitted(true);
     } catch (err) {
     } finally {
     }

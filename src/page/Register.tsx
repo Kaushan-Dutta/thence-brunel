@@ -3,10 +3,13 @@ import { RxCross1 } from "react-icons/rx";
 import auth from "../lib/api/auth";
 import { BsExclamationCircleFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
+import ValidSubmit from "./components/ValidSubmit";
 
 const Register = () => {
-  const {  inputList,validateForm } = auth();
-
+  const {isSubmitted, submitForm, inputList,validateForm } = auth();
+  if(isSubmitted){
+    return <ValidSubmit/>
+  }
   return (
     <section className="flex flex-col gap-20">
       <div className="flex-row-center justify-between">
@@ -22,7 +25,7 @@ const Register = () => {
             Start your success Journey here!
           </p>
         </div>
-        <form className="flex flex-col justify-center gap-10 ">
+        <form className="flex flex-col justify-center gap-10 " onSubmit={submitForm}>
           <div className="flex flex-col gap-5 justify-center">
             {inputList.map((ele) => (
               <>

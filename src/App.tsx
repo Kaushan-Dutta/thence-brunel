@@ -4,7 +4,7 @@ import Register from "./page/Register";
 
 const App = () => {
   return (
-    <div className="w-screen min-h-screen font-manrope md:px-[4rem] py-[1rem] px-[1rem] ">
+    <div className="w-screen min-h-screen font-manrope md:px-[4rem] py-[1rem] px-[1rem] overflow-hidden">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />

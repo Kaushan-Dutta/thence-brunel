@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa6";
 import Img1 from "../../public/assets/Img1.png";
 import Img3 from "../../public/assets/Img3.png";
+import Img2 from "../../public/assets/Img2.png";
 import { AiOutlinePlus } from "react-icons/ai";
 import questions from "../../public/json/question.json";
 
@@ -27,7 +28,7 @@ const Home = () => {
       <Navbar />
       <div className="flex flex-col gap-20 ">
         <div className=" text-center mx-auto md:w-1/3">
-          <p className="font-grace text-green text-2xl">Success stories</p>
+          <p className="grace-style">Success stories</p>
           <p className="md:text-4xl text-3xl font-semibold">
             Every success journey we’ve encountered.
           </p>
@@ -36,7 +37,7 @@ const Home = () => {
           <div className="  md:w-1/3 relative">
             <img src={Img1} alt="img1" className="max-w-96 mx-auto" />
             <div className="p-3 rounded-lg  bg-white shadow-md  w-40 h-36 flex flex-col gap-3 absolute top-24 md:-left-16 -left-10">
-              <p className="text-4xl">40%</p>
+              <p className="text-4xl relative"><span><img src={Img2} className="absolute -translate-x-5 -translate-y-5 w-12 "/></span>40%</p>
               <p className="text-xs font-semibold">
                 Achieved reduction in project execution time by optimising team
                 availability
@@ -116,7 +117,7 @@ const Home = () => {
                   </span>
                 </p>
                 <p className={`text-lg text-shade1  ${idx===curQuery?'':'hidden'}`}>{obj?.answer}</p>
-                <hr className="border-shade2" />
+                <hr className={`${idx!=questions.length-1 && 'border-shade2'}`} />
               </div>
             ))}
           </div>

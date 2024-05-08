@@ -16,3 +16,6 @@ input{
 input:focus{
   @apply border-[1px] border-[#537FF1] bg-[#F5F8FF]
 }
+.grace-style{
+  @apply font-grace text-2xl text-green
+}
