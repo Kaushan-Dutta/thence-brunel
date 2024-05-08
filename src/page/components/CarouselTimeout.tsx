@@ -5,7 +5,7 @@ interface TimeInterval {
   setCurFeature: (curFeature: number) => void;
   curFeature: number;
 }
-
+//setting interface for the props object type to be accepted
 const CarouselTimeout: React.FC<TimeInterval> = ({
   nsets,
   setCurFeature,

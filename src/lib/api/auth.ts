@@ -19,13 +19,14 @@ const auth = () => {
       onChange: (e) => setEmail(e.target.value),
       remarks: "Enter a valid email address",
       condition: () => {
-        if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
+        if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) { 
+          //checking whether the email starting with a alpha numeric characters and followed by @ , with subdomain of any length and ending with a domain of maximum 4 characters
           return true;
         }
       },
     },
   ];
-
+  //using callback to check if there is any change in the field
   const validateForm = useCallback(() => {
     return inputList.every(
       (ele) => ele.value.length > 0 && (ele?.remarks ? ele.condition() : true)
@@ -38,8 +39,7 @@ const auth = () => {
       console.log('Email:',email,', Name:',name)
       setSubmitted(true);
     } catch (err) {
-    } finally {
-    }
+    } 
   };
 
   return { isSubmitted, setSubmitted, submitForm, inputList,validateForm };

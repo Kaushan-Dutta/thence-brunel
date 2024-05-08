@@ -8,6 +8,7 @@ import Img3 from "../../public/assets/Img3.png";
 import Img2 from "../../public/assets/Img2.png";
 import { AiOutlinePlus } from "react-icons/ai";
 import questions from "../../public/json/question.json";
+import {motion} from 'framer-motion';
 
 import { FaRocket } from "react-icons/fa";
 import CarouselTimeout from "./components/CarouselTimeout";
@@ -27,14 +28,14 @@ const Home = () => {
     <section className="flex flex-col gap-10 ">
       <Navbar />
       <div className="flex flex-col gap-20 ">
-        <div className=" text-center mx-auto md:w-1/3">
+        <div className=" text-center mx-auto md:w-1/3" >
           <p className="grace-style">Success stories</p>
           <p className="md:text-4xl text-3xl font-semibold">
             Every success journey we’ve encountered.
           </p>
         </div>
         <div className="flex md:flex-row flex-col items-center justify-center   gap-20 mb-10 ">
-          <div className="  md:w-1/3 relative">
+          <motion.div className="  md:w-1/3 relative" initial={{opacity:0,scale:0}} animate={{opacity:1,scale:1}} transition={{duration:1}}>
             <img src={Img1} alt="img1" className="max-w-96 mx-auto" />
             <div className="p-3 rounded-lg  bg-white shadow-md  w-40 h-36 flex flex-col gap-3 absolute top-24 md:-left-16 -left-10">
               <p className="text-4xl relative"><span><img src={Img2} className="absolute -translate-x-5 -translate-y-5 w-12 "/></span>40%</p>
@@ -63,8 +64,8 @@ const Home = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="md:w-1/3 flex flex-col gap-10">
+          </motion.div>
+          <motion.div className="md:w-1/3 flex flex-col gap-10" initial={{x:'100vw'}} animate={{x:0}} transition={{type:'spring',duration:2}}>
             <div className="flex flex-col gap-5">
               <p className="text-3xl  md:w-80   text-black font-semibold md:h-36 h-28">
                 {features[curFeature]}
@@ -86,7 +87,7 @@ const Home = () => {
                 <FaArrowRight />
               </span>
             </NavLink>
-          </div>
+          </motion.div>
         </div>
         <div className="bg-[#E8EEE7] rounded-3xl p-10 flex md:flex-row flex-col items-center justify-between">
           <div className="md:w-1/2 flex flex-col gap-10">

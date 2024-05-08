@@ -9,6 +9,7 @@ const ValidSubmit = () => {
     const [time,setTime]=useState(5);
 
     useEffect(() => {
+        //using setInterval to repeat the function every 1 second
         const countDown=setInterval(() => {
             if(time===1){
                 navigate('/')
@@ -18,7 +19,7 @@ const ValidSubmit = () => {
         return () => {
             clearInterval(countDown)
         }
-    }, [time])
+    }, [time])//id there is a change in time run the use effect hook
 
     return (
         <section className="flex flex-col md:gap-40 gap-20 ">

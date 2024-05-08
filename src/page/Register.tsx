@@ -5,6 +5,7 @@ import auth from "../lib/api/auth";
 import { BsExclamationCircleFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 import ValidSubmit from "./components/ValidSubmit";
+import {motion} from 'framer-motion';
 
 const Register = () => {
   const {isSubmitted, submitForm, inputList,validateForm } = auth();
@@ -19,7 +20,7 @@ const Register = () => {
           <RxCross1 />
         </NavLink>
       </div>
-      <div className="md:w-[350px] mx-auto flex flex-col gap-10">
+      <motion.div className="md:w-[350px] mx-auto flex flex-col gap-10" initial={{opacity:0.5,scale:0.5}} animate={{opacity:1,scale:1}} transition={{duration:1}}>
         <div className=" text-center mx-auto w-full ">
           <p className="font-grace text-green text-2xl">Registration Form</p>
           <p className="md:text-4xl text-3xl font-semibold">
@@ -42,7 +43,7 @@ const Register = () => {
             Submit
           </button>
         </form>
-      </div>
+      </motion.div>
     </section>
   );
 };
