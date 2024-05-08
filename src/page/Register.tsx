@@ -1,3 +1,4 @@
+import React from "react";
 import Logo from "../../public/assets/Logo.png";
 import { RxCross1 } from "react-icons/rx";
 import auth from "../lib/api/auth";
@@ -27,11 +28,11 @@ const Register = () => {
         </div>
         <form className="flex flex-col justify-center gap-10 " onSubmit={submitForm}>
           <div className="flex flex-col gap-5 justify-center">
-            {inputList.map((ele) => (
-              <>
-              <input {...ele} />
+            {inputList.map((ele,index) => (
+              <React.Fragment key={index}>
+              <input type={ele.type} placeholder={ele.placeholder} value={ele.value} onChange={ele.onChange} />
               {ele?.remarks && ele?.value.length>0 && !ele?.condition() &&  <p className="text-xs text-red-500 font-bold flex-row-center gap-1 "><span className=" ">< BsExclamationCircleFill/></span>{ele?.remarks}</p>}
-              </>
+              </React.Fragment>
             ))}
           </div>
           <button

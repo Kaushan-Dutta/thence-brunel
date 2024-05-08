@@ -1,8 +1,8 @@
 import { useCallback, useState } from "react";
 
 const auth = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [isSubmitted, setSubmitted] = useState(false);
 
   const inputList = [
@@ -35,7 +35,7 @@ const auth = () => {
   const submitForm = (e) => {
     e.preventDefault();
     try {
-      console.log('Email:',email,'Name:',name)
+      console.log('Email:',email,', Name:',name)
       setSubmitted(true);
     } catch (err) {
     } finally {
